@@ -10,11 +10,19 @@ function App() {
   return (
     <div className="App">
       <header>
-        <nav className="navbar navbar-light bg-light">
-          <NavLink exact={true} to="/">Home</NavLink>
-          <NavLink to="/duty">Doctor Schedule</NavLink>
-          <NavLink to="/signup">Patient SignUp</NavLink>
-          <NavLink to="/patients">Patient Database</NavLink>
+        <nav className="navbar nav navbar-light bg-light">
+          <li>
+            <NavLink exact={true} to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/duty">Doctor Schedule</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signup">Patient SignUp</NavLink>
+          </li>
+          <li>
+            <NavLink to="/patients">Patient Database</NavLink>
+          </li>
         </nav>
       </header>
       <main className="container mt-5">
@@ -24,10 +32,6 @@ function App() {
             <Route path="/signup" component={AddPatient} />
             <Route path="/patients" component={PatientsInfo} />
           </Switch>   
-        <div className="row">
-      
-         
-        </div>
       </main>
 
     </div>

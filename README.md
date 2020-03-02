@@ -94,7 +94,7 @@ Here is an overview for the app:
 | A navbar can be used to navigate on all pages | 2      |
 | 2 Buttons link to the correct pages           | 1      |
 | The navbar indicates what page you are on     | 1      |
-| Total                                         | 7      |
+| Total                                         | 7      | 7
 
 Hint: to indicate what page a user is on use the `<NavLink />` component
 
@@ -115,7 +115,7 @@ Business logic: the practice is open between 08:00 and 16:59
 | Wether the practice is open right now is displayed on both pages       | 0.5    |
 | Wether the practice is open or closed is dynamic, not hardcoded        | 2      |
 | To display this information the same component is reused on both pages | 2      |
-| Total                                                                  | 5      |
+| Total                                                                  | 5      | 5
 
 Hint: You will have to google how to get the current hour of the day using javascript to be able to display **open** or **closed** dynamically.
 
@@ -133,11 +133,11 @@ https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors
 | ----------------------------------------------------------------- | ------ |
 | Doctor availabilty is displayed on the who is on duty page        | 1      |
 | The data is fetched from the api, not hardcoded                   | 3      |
-| If the data is still being fetched, display "loading" to the user | 3      |
+| If the data is still being fetched, display "loading" to the user | 3      | fix loader
 | The data is displayed using .map                                  | 2      |
 | There is a warning in the console regarding "key" props           | -1     |
 | Doctor availability is displayed using an html `table` element    | 1      |
-| Total                                                             | 10     |
+| Total                                                             | 10     | 10
 
 ### 4. As a new patient I want to be able to sign up
 
@@ -148,13 +148,13 @@ https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors
 | Criteria                                                                 | Points |
 | ------------------------------------------------------------------------ | ------ |
 | A form is displayed on the Patient Signup page                           | 1      |
-| The form has inputs for firstName, lastName, email, phoneNumber & submit | 0.5    |
-| The form has a select input for gender, and a date input for dateOfBirth | 0.5    |
+| The form has inputs for firstName, lastName, email, phoneNumber & submit | 0.5    | fix
+| The form has a select input for gender, and a date input for dateOfBirth | 0.5    | check
 | The state of the form is controlled using React useState hook(s)         | 2      |
 | When the form is submitted, the user input for all form fields is logged | 3      |
-| When the form has been submitted, we show a success message to the user  | 3      |
+| When the form has been submitted, we show a success message to the user  | 3      | fix
 | Submitting the form refreshes the page                                   | -2     |
-| Total                                                                    | 10     |
+| Total                                                                    | 10     | 10
 
 ### 5. As a doctor I want to be able to view the data of my patients, so I can make good decisions
 
@@ -186,13 +186,13 @@ https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors
 | The data for each patient is displayed using a seperate component         | 2      |
 | The data is displayed using .map                                          | 1      |
 | There is a warning in the console regarding "key" props                   | -1     |
-| The patients are sorted by their `lastName` using .sort                   | 3      |
+| The patients are sorted by their `lastName` using .sort                   | 3      | fix
 | The data for the patients is fetched from the api, not hardcoded          | 1      |
 | Each patient displayed has a `show details` button                        | 0.5    |
 | When clicked: display `email`, `phoneNumber`, `gender` & `prescriptions`  | 2.5    |
 | The page has a `select` input for the 3 doctors names and `all`           | 1      |
 | When `all` is selected, all patients are displayed                        | 1      |
-| Selecting the name of a doctor filters the patients that are displayed    | 3      |
+| Selecting the name of a doctor filters the patients that are displayed    | 3      | fix
 | The names of the doctors in the `select` input are fetched, not hardcoded | 2      |
 | Total                                                                     | 18     |
 
