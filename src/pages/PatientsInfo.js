@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function PatientInfo(props) {
   const [patients, set_requirePatients] = useState([]);
-  const [optionsState, setDoctor] = useState([]);
+  const [optionsState, setDoctor] = useState(0);
   const [doctors, set_requireDoctors] = useState([{doctor : "loading"}]);
 
   useEffect(() => {
@@ -18,7 +18,34 @@ export default function PatientInfo(props) {
       set_requireDoctors(responseDoctors.data)
     }
     fetchData();
-  }, [props.id]);
+  }, []);
+
+
+  // function updateScore() {
+  //   if (optionsState > 0){
+  //     const filteredPatients = patients.filter(patient => patient.doctorId === optionsState);
+  //     set_requirePatients(filteredPatients);
+  //     console.log("opntion above 0", filteredPatients, optionsState )
+  //   } else {
+  //     // set_requirePatients([]);
+  //     set_requirePatients(patients);
+  //     console.log("opntion 0", patients, optionsState )
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   updateScore();
+  // }, [optionsState]);
+
+ 
+  function compare (a,b) {
+    if (a.lastName < b.lastName) return -1;
+    if (a.lastName > b.lastName) return 1;
+    return 0;
+  }
+  const filteredPatients = patients.filter(patient => patient.doctorId === optionsState || optionsState === 0);
+  
+  const sortedPatients = [...filteredPatients].sort(compare);
 
   return (
     <div className="row justify-content-md-center">
@@ -31,9 +58,12 @@ export default function PatientInfo(props) {
         <div className="col-sm-9">
         {}
         <select className="form-control" 
-        // value={optionsState}
+        value={optionsState}
+        onChange={event => {
+          setDoctor(parseInt(event.target.value));
+        }}
         >
-          <option value="all">All</option>
+          <option>All</option>
           {doctors.map(item => (
             <DoctorSelector
               key={item.id}
@@ -46,10 +76,11 @@ export default function PatientInfo(props) {
       </div>
       
 
-      {patients.map(patient => (
-          
+      {sortedPatients.map(patient => (
+          <div>
         <PatientCard 
-        key={patient.id} 
+        key={patient.id}
+        doctorId={patient.doctorId}
         firstName={patient.firstName} 
         id={patient.id} 
         lastName={patient.lastName} 
@@ -59,7 +90,11 @@ export default function PatientInfo(props) {
         gender={patient.gender}
         prescriptions={patient.prescriptions}
         />
+          </div>
+
         ))}
+
+
          </div>
     </div>
   );

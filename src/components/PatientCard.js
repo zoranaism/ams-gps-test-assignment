@@ -8,12 +8,10 @@ export default function PatientCard(props) {
     setToggleContent({show : !toggleContent.show});
   };
 
-  return <div className="">
-  <div className="">
-
-  <div className="card mb-4">
+  return  <div className="card mb-4">
 
     <div className="card-body">
+      <h2>{props.doctorId}</h2>
       <h3 className="card-title mt-3">Name: {props.firstName + " " + props.lastName} </h3>
       <p className="card-text">id: {props.id}<br />
       Date of birth: {props.dateOfBirth}</p>
@@ -36,6 +34,5 @@ export default function PatientCard(props) {
     <button onClick={ () => handleClick() }>Show details</button>
 
   </div>
-  </div>
-  </div> 
+
 }
