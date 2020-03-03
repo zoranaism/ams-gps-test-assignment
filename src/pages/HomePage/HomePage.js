@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import ContactInfo from '../components/ContactInfo';
+import ContactInfo from '../../components/ContactInfo';
+import './HomePage.scss';
 
 export default function HomePage() {
   return (
@@ -8,8 +9,8 @@ export default function HomePage() {
       <h2 className="mb-5 text-center">Welcome to AMS GPs</h2>
       <ContactInfo />
       <div className="text-center">
-        <Link to="/duty">Who is on Duty?</Link><br />
-        <Link to="/signup">I am a new patient</Link>
+        <Link className="btn" to="/duty">Who is on Duty?</Link><br />
+        <Link className="btn" to="/signup">I am a new patient</Link>
       </div>
     </div>
   );

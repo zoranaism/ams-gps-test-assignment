@@ -32,7 +32,7 @@ export default function AddPatient() {
       <h2 className="mb-5 text-center">Patient signup</h2> 
 
       <div className="row justify-content-md-center">
-        <form className="col-md-7" onSubmit="return confirm('You have successfully submited the form');">
+        <form className="col-md-7">
           <div className="form-group row">
             <label className="col-sm-4 col-form-label">Name</label>
             <div className="col-sm-8">
@@ -40,7 +40,7 @@ export default function AddPatient() {
                 onChange={event => {
                   setName(event.target.value);
                 }}
-                value={name}
+                defaultValue={name}
                 type="text"
                 className="form-control"
                 placeholder="Write your name?"
@@ -55,7 +55,7 @@ export default function AddPatient() {
                 onChange={event => {
                   setLastName(event.target.value);
                 }}
-                value={lastName}
+                defaultValue={lastName}
                 type="text"
                 className="form-control"
                 placeholder="Write your last name"
@@ -70,7 +70,7 @@ export default function AddPatient() {
                 onChange={event => {
                   setEmail(event.target.value);
                 }}
-                value={email}
+                defaultValue={email}
                 type="email"
                 className="form-control"
                 placeholder="Write your email"
@@ -85,7 +85,7 @@ export default function AddPatient() {
                 onChange={event => {
                   setPhone(event.target.value);
                 }}
-                value={phone}
+                defaultValue={phone}
                 type="number"
                 className="form-control"
                 placeholder="Write your phone"
@@ -96,15 +96,15 @@ export default function AddPatient() {
           <div className="form-group row">
             <label className="col-sm-4 col-form-label">Gender</label>
             <div className="col-sm-8">
-              <select value={optionsState}
+              <select defaultValue={optionsState}
                 onChange={event => {
                   setGender(event.target.value);
                 }}
                 className="form-control"
               >
-                <option value="m">Male</option>
-                <option value="f">Female</option>
-                <option value="n">None of the above</option>
+                <option defaultValue="m">Male</option>
+                <option defaultValue="f">Female</option>
+                <option defaultValue="n">None of the above</option>
               </select>
             </div>
           </div>
@@ -123,12 +123,8 @@ export default function AddPatient() {
           
           <div className="justify-content-md-center row mt-5">
 
-          <button onClick={submitPatient} className="btn btn-primary ">
-            SUBMIT
-          </button>
-          <button  onClick={(e) => {  } }>
-              Delete
-</button>
+          <input onClick={submitPatient} className="btn btn-primary mb-5" defaultValue="SUBMIT" />
+            
           </div>
 
         </form>

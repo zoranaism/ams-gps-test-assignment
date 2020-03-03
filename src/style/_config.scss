@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:800|Libre+Baskerville:400,400i,700,700i&display=swap");
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 $headings-font-family: "Roboto Slab", serif;
 $headings-font-weight: 800;
@@ -12,4 +15,17 @@ a.active {
 
 .react-datepicker-wrapper {
   width: 100%;
+}
+.nav {
+  padding: 15px 30px !important; 
+}
+
+.nav li:last-child a {
+  border-right: none;
+}
+
+.nav li a {
+  border-right: 1px solid #bbb;
+  display: block;
+   padding: 0 10px;
 }
