@@ -20,29 +20,12 @@ export default function PatientInfo(props) {
     fetchData();
   }, []);
 
-
-  // function updateScore() {
-  //   if (optionsState > 0){
-  //     const filteredPatients = patients.filter(patient => patient.doctorId === optionsState);
-  //     set_requirePatients(filteredPatients);
-  //     console.log("opntion above 0", filteredPatients, optionsState )
-  //   } else {
-  //     // set_requirePatients([]);
-  //     set_requirePatients(patients);
-  //     console.log("opntion 0", patients, optionsState )
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   updateScore();
-  // }, [optionsState]);
-
- 
   function compare (a,b) {
     if (a.lastName < b.lastName) return -1;
     if (a.lastName > b.lastName) return 1;
     return 0;
   }
+
   const filteredPatients = patients.filter(patient => patient.doctorId === optionsState || optionsState === 0);
   
   const sortedPatients = [...filteredPatients].sort(compare);
@@ -63,7 +46,7 @@ export default function PatientInfo(props) {
           setDoctor(parseInt(event.target.value));
         }}
         >
-          <option>All</option>
+          <option value="0">All</option>
           {doctors.map(item => (
             <DoctorSelector
               key={item.id}

@@ -18,7 +18,8 @@ export default function AddPatient() {
     event.preventDefault();
     const newPatient = [{name, lastName, email, phone, optionsState, birthDate}]
     setPatient(newPatient);
-    console.log("Signed up Patient info", newPatient)
+    console.log("THIS IS THE FORM RESULT: ", newPatient);
+    window.confirm('Your form has been sucesfully submited');
   }
 
   const handleChange = date => {
@@ -31,7 +32,7 @@ export default function AddPatient() {
       <h2 className="mb-5 text-center">Patient signup</h2> 
 
       <div className="row justify-content-md-center">
-        <form className="col-md-7">
+        <form className="col-md-7" onSubmit="return confirm('You have successfully submited the form');">
           <div className="form-group row">
             <label className="col-sm-4 col-form-label">Name</label>
             <div className="col-sm-8">
@@ -125,6 +126,9 @@ export default function AddPatient() {
           <button onClick={submitPatient} className="btn btn-primary ">
             SUBMIT
           </button>
+          <button  onClick={(e) => {  } }>
+              Delete
+</button>
           </div>
 
         </form>
