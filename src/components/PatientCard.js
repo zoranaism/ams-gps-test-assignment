@@ -30,7 +30,7 @@ export default function PatientCard(props) {
       </ul>
     </ToggleDisplay>
       <div className="card-body justify-content-md-center row">
-          <button className="btn btn-primary" onClick={ () => handleClick() }>Show details</button>
+          <button className="btn btn-outline-secondary" onClick={ () => handleClick() }>Show details</button>
       </div>
 
   </div>

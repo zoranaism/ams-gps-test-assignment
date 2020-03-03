@@ -9,8 +9,8 @@ export default function HomePage() {
       <h2 className="mb-5 text-center">Welcome to AMS GPs</h2>
       <ContactInfo />
       <div className="text-center">
-        <Link className="btn" to="/duty">Who is on Duty?</Link><br />
-        <Link className="btn" to="/signup">I am a new patient</Link>
+        <Link className="btn btn-outline-secondary duty-button" to="/duty">Who is on Duty?</Link><br />
+        <Link className="btn btn-outline-secondary duty-button" to="/signup">I am a new patient</Link>
       </div>
     </div>
   );

@@ -123,7 +123,7 @@ export default function AddPatient() {
           
           <div className="justify-content-md-center row mt-5">
 
-          <input onClick={submitPatient} className="btn btn-primary mb-5" defaultValue="SUBMIT" />
+          <input onClick={submitPatient} className="btn btn-outline-secondary mb-5" defaultValue="SUBMIT" />
             
           </div>
 
