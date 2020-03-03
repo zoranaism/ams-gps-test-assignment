@@ -28,32 +28,33 @@ export default function DutyScheduleInfo(props) {
       <div className="col-md-8">
       
       
-      <h2 className="mb-5 text-center">Who is on duty?</h2><br />
+        <h2 className="mb-5 text-center">Who is on duty?</h2><br />
 
       
-      <table className="table mb-5">
+        <table className="table table-bordered">
 
-        <thead>
-          <tr>
-            <th scope="col">Doctor</th>
-            <th scope="col">Availability</th>
-          </tr>
-        </thead>
+          <thead>
+            <tr>
+              <th scope="col">Doctor</th>
+              <th scope="col">Availability</th>
+            </tr>
+          </thead>
 
-        <tbody className="loader center">
-        
-          <Loader visible={loader} className="row justify-content-md-center" type="ThreeDots" color="#somecolor" />
+          <tbody>
+          
 
-          {doctors.map(item => (
-            <DoctorCard 
-              key={item.id}
-              doctor={item.doctor}
-              onDuty={item.onDuty}
-            />
-          ))}
-        </tbody>
+            {doctors.map(item => (
+              <DoctorCard 
+                key={item.id}
+                doctor={item.doctor}
+                onDuty={item.onDuty}
+              />
+            ))}
+          </tbody>
 
-      </table>
+        </table>
+            
+        <Loader visible={loader} className="row justify-content-md-center" type="ThreeDots" color="#somecolor" />
 
       <ContactInfo />
       </div>

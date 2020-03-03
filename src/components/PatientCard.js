@@ -11,7 +11,6 @@ export default function PatientCard(props) {
   return  <div className="card mb-4">
 
     <div className="card-body">
-      <h2>{props.doctorId}</h2>
       <h3 className="card-title mt-3">Name: {props.firstName + " " + props.lastName} </h3>
       <p className="card-text">id: {props.id}<br />
       Date of birth: {props.dateOfBirth}</p>
@@ -30,8 +29,9 @@ export default function PatientCard(props) {
         })}
       </ul>
     </ToggleDisplay>
-
-    <button onClick={ () => handleClick() }>Show details</button>
+      <div className="card-body justify-content-md-center row">
+          <button className="btn btn-primary" onClick={ () => handleClick() }>Show details</button>
+      </div>
 
   </div>
 
